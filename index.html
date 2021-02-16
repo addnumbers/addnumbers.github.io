@@ -3,35 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operations</title>
+    <title>Document</title>
 </head>
 <body>
-    <input type="text" id="num1">
+    Number1 : <input type="text" id="num1"/>
     <br>
     <br>
-    <input type="text" id="num2">
+    Number2 : <input type="text" id="num2"/>
     <br>
     <br>
-    <button onclick="sum()">Calculate</button>
+    <select name="Operations" id="operator">
+        <option>Plus</option>
+        <option>Minus</option>
+        <option>Divide</option>
+        <option>Multiply</option>
+    </select>
     <br>
     <br>
-    <h1>this is edit portion </h1>
+    <button onclick="operations()">Calculate</button>
     <br>
     <br>
-    <h1 id="answer"></h1>
+    <h1 id="results"></h1>
 
     <script>
-        function sum(){
-            var num1 = document.getElementById('num1');
-            console.log(num1);
-            console.log(typeof(num1));
-            var num11 = document.getElementById('num1').value;
-            console.log(num11);
-            console.log(typeof(num11));
-            var num2 = document.getElementById('num2').value;
-            var results = parseFloat(num11) + parseFloat(num2);
-            document.getElementById('answer').innerHTML = results;
-
+        function operations(){
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var operator = document.getElementById('operator').value;
+            if (operator === 'Plus'){
+                document.getElementById('results').innerHTML = num1 + num2;
+            }
+            else if (operator === 'Minus'){
+                document.getElementById('results').innerHTML = num1 - num2;
+            }
+            else if (operator === 'Divide'){
+                document.getElementById('results').innerHTML = num1 / num2;
+            }
+            else {
+                document.getElementById('results').innerHTML = num1 * num2;
+            }
         }
     </script>
 </body>
