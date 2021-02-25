@@ -1,42 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" onclick="jump()">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geolocation</title>
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>See Your Geolocation By Clicking below button "Click Me 1"</h1>
-    <h2>Warning :</h2>
-    <h3>Only Select "Click Me 1" . Please Do not Select "Click Me 2"</h3>
-    <h2>Instructions :</h2>
-    <ul>
-        <ol>1) After clicking "click me 1" button allow permission</ol>
-        <ol>2) In case you already allowed it you dont have to do anything</ol>
-        <ol>3) If you have kept it blocked grant permission</ol>
-        <ol>4) Put the coordinates in google maps to see your location</ol>
-    </ul>
-    <br>
-    <br>
-    <button onclick="data()">Click Me 1</button>
-    <br>
-    <br>
-    <button onclick="bitch()">Click Me 2</button>
-    <br>
-    <br>
-    <h1 id="geolocation"></h1>
-
-
-
-    <script>
-        function data(){
-            window.navigator.geolocation.getCurrentPosition(p => {
-                window.document.getElementById("geolocation").innerHTML = "Latitude " + p.coords.latitude + " and longitude " + p.coords.longitude});
-            }
-
-        function bitch(){
-            window.alert("Look At the Audacity of this Bitch...  Clicked Me Even after told not to do it ");
-        }
-    </script>
+    <div id="game">
+        <div id="character">
+            <div id="block"></div>
+        </div>
+    </div>  
 </body>
+<script src="script.js" defer></script>
 </html>
